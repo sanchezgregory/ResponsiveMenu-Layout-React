@@ -1,15 +1,20 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layouts/Layout'
+import HomePage from './pages/HomePage';
+import ReportPage from './pages/ReportPage';
 
 function App() {
 
   return (
-    
     <>
-      <Layout title=" First Page ">
-        <h1 className='text-3xl'>Contenido de la página</h1>
-        <p>Contenido de la página</p>
-        <hr />
+    <Router>
+      <Layout title='Home'>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/reports" element={<ReportPage />} />
+        </Routes>
       </Layout>
+    </Router>
     </>
   )
 }
